@@ -13,10 +13,10 @@ capture = cv2.VideoCapture(video_input_path)
 
 # Load network with CUDA support
 network_save_path = 'models/' + model_name +'.pt'
-navigation_CNN = torch.load(network_save_path)
-print(navigation_CNN)
+pose_CNN = torch.load(network_save_path)
+print(pose_CNN)
 if torch.cuda.is_available():       
-    navigation_CNN = navigation_CNN.cuda()  
+    pose_CNN = pose_CNN.cuda()  
 
 transformer = transforms.ToTensor()
 
@@ -35,7 +35,7 @@ while (capture.isOpened()):
             image_tensor = Variable(image_tensor).cuda()
 
     # Inference and search for max probability
-    direction = navigation_CNN(image_tensor)
+    direction = pose_CNN(image_tensor)
     _,predicted = torch.max(direction.data,1)
     pose_label = predicted.item()
     print("Pose label:",pose_label)
