@@ -40,6 +40,7 @@ while(counter<=num_data):
         with open(train_csv, 'a') as csvfile:
                 writer = csv.writer(csvfile)
                 img_name = 'img_' + str(index) + '.jpg'
+                # Define range of data in terms of classes
                 if(((index >= 1)and(index <= 552))): 
                     writer.writerow([img_name,0])
                 if(((index >= 553)and(index <= 1078))): 
@@ -64,6 +65,7 @@ while(counter<=num_data):
         with open(test_csv, 'a') as csvfile:
                 writer = csv.writer(csvfile)
                 img_name = 'img_' + str(index) + '.jpg'
+                # Define range of data in terms of classes
                 if(((index >= 1)and(index <= 552))): 
                     writer.writerow([img_name,0])
                 if(((index >= 553)and(index <= 1078))): 
