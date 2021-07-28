@@ -164,5 +164,5 @@ for epoch in range(config.num_epoches):
     writer.flush()
 
 # Save checkpoint
-torch.save(navigation_net,'models/neck_pose_net_v1.pt')
+torch.save(navigation_net,'models/neck_pose_net_v2.pt')
 print("Training is over")

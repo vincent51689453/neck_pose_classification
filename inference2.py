@@ -8,7 +8,7 @@ from torch.autograd import Variable
 model_name = 'neck_pose_net_v2'
 
 # Video source
-video_input_path = 'data/dataset_28July2021/videos/man_1.avi'
+video_input_path = 'data/dataset_28July2021/videos/man_2.avi'
 capture = cv2.VideoCapture(video_input_path)
 
 # Load network with CUDA support
